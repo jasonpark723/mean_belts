@@ -1,0 +1,24 @@
+<p class="text center h3">Review for {{ restaurant.name }}</p>
+
+<button class="btn btn-lg btn-success mr-3" routerLink="review">
+  New Review
+</button>
+<button class="btn btn-lg btn-secondary mr-3" routerLink="/restaurants">
+  Back
+</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Customer</th>
+      <th scope="col">Stars</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let review of reviews">
+      <td>{{ review.name }}</td>
+      <td>{{ review.rating }}</td>
+      <td>{{ review.comment }}</td>
+    </tr>
+  </tbody>
+</table>

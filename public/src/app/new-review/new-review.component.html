@@ -1,0 +1,46 @@
+<h5>
+  <b>Write a review for {{ restaurant.name }}</b>
+</h5>
+
+<form (submit)="onSubmit()" class="mt-5 w-50">
+  <div class="form-group">
+    <label for="name">Your name:</label>
+    <input
+      type="text"
+      class="form-control"
+      name="name"
+      [(ngModel)]="newReview.name"
+    />
+  </div>
+  <div class="form-group">
+    <label for="rating">Stars:</label>
+    <select
+      type="text"
+      class="form-control"
+      name="rating"
+      [(ngModel)]="newReview.rating"
+    >
+      <option value="1">1 stars</option>
+      <option value="2">2 stars</option>
+      <option value="3">3 stars</option>
+      <option value="4">4 stars</option>
+      <option value="5">5 stars</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="comment">Your Review:</label>
+    <input
+      type="text"
+      class="form-control"
+      name="comment"
+      [(ngModel)]="newReview.comment"
+    />
+  </div>
+  <button type="button" (click)="Cancel()" class="mr-2 btn btn-secondary">
+    Cancel
+  </button>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<div *ngFor="let error of errors">
+  <p class="text-danger d-block">{{ error }}</p>
+</div>

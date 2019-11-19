@@ -1,0 +1,15 @@
+<tr>
+  <td>{{ rest.name }}</td>
+  <td>{{ rest.cuisine }}</td>
+  <td>
+    <button class="btn-primary btn btn-lg" routerLink="{{ rest._id }}">
+      Read Reviews
+    </button>
+    <button class="btn-warning btn btn-lg mx-3" (click)="restToEdit(rest)">
+      Update
+    </button>
+    <button class="btn-danger btn btn-lg" (click)="DeleteRest(rest._id)">
+      Delete
+    </button>
+  </td>
+</tr>

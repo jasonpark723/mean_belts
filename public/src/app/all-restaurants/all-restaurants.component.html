@@ -1,0 +1,48 @@
+<div>
+  <button class="btn btn-lg btn-success" routerLink="new">
+    New restaurant
+  </button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Restaurant</th>
+        <th scope="col">Cuisine</th>
+        <th scope="col">Action available</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <app-restaurant
+        *ngFor="let rest of restaurants; let i = index"
+        [restToShow]="rest"
+        [restIdx]="i"
+      ></app-restaurant> -->
+      <tr *ngFor="let rest of restaurants">
+        <td>{{ rest.name }}</td>
+        <td>{{ rest.cuisine }}</td>
+        <td>
+          <button class="btn-primary btn btn-lg" routerLink="{{ rest._id }}">
+            Read Reviews
+          </button>
+          <button
+            class="btn-warning btn btn-lg mx-3"
+            (click)="restToEdit(rest)"
+          >
+            Update
+          </button>
+          <button
+            class="btn-danger btn btn-lg"
+            (click)="DeleteRest(rest._id)"
+            disabled="{{ rest.passed }}"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-edit-restaurant
+  *ngIf="restaurantToEdit"
+  [restaurantToEdit]="restaurantToEdit"
+></app-edit-restaurant>

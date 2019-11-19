@@ -1,0 +1,27 @@
+<h5><b>Register a restaurant</b></h5>
+
+<form (submit)="onSubmit()" class="mt-5 w-50">
+  <div class="form-group">
+    <label for="name">Restaurant name:</label>
+    <input
+      type="text"
+      class="form-control"
+      name="name"
+      [(ngModel)]="newRestaurant.name"
+    />
+  </div>
+  <div class="form-group">
+    <label for="cuisine">Cuisine:</label>
+    <input
+      type="text"
+      class="form-control"
+      name="cuisine"
+      [(ngModel)]="newRestaurant.cuisine"
+    />
+  </div>
+  <button type="button" (click)="Cancel()" class="mr-2 btn btn-secondary">
+    Cancel
+  </button>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<p class="text-danger" *ngFor="let error of errors">{{ error }}</p>
